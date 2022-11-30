@@ -1,5 +1,6 @@
+import React from 'react';
 import styles from './Home.module.css';
-import Button from '../components/Button/index'
+import Button from '../../components/Button/index'
 
 function Home() {
 
@@ -11,7 +12,10 @@ function Home() {
       <p>
         Comece a gerenciar os seus projetos agora mesmo!
       </p>
-      <a href="/NovoProjeto"><Button text='Criar projeto' /></a> <br/>
+      <a>
+        <Button text='Criar projeto' />
+      </a>
+      <br/>
       <img src='../pig.png' alt='Cofre de porco' className={styles.img} />
     </div>
   );
