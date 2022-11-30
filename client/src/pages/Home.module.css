@@ -1,0 +1,10 @@
+.marca {
+  background-color: rgb(46, 46, 46);
+  color: rgb(255, 224, 70);
+  padding: 0 10px;
+}
+
+.img {
+  margin-top: 20px;
+  width: 300px;
+}
