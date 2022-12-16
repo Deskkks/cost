@@ -12,7 +12,7 @@ function Home() {
       <p>
         Comece a gerenciar os seus projetos agora mesmo!
       </p>
-      <a>
+      <a href='/novoProjeto'>
         <Button text='Criar projeto' />
       </a>
       <br/>

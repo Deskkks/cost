@@ -1,0 +1,40 @@
+.projetos {
+  display: flex;
+  margin: 50px;
+}
+
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+}
+
+.projeto {
+  width: 300px;
+  margin: 20px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.projeto > h2 {
+  margin: 0;
+  padding: 5px;
+  color: rgb(255, 224, 70);
+  background-color: rgb(46, 46, 46);
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.circulo {
+  content: '';
+  background-color: rgb(250, 47, 1);
+  padding: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px;
+}
