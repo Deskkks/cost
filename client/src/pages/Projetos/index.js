@@ -18,17 +18,17 @@ function Projetos () {
 
   return (
     <div className="App">
-      <div className={styles.div}>
+      <div className='flexSpaceB'>
         <h1>Meus projetos</h1>
         <a href='/novoProjeto'><Button text= 'Criar projeto'/></a>
       </div>
-      <div className={styles.projetos}>
+      <div className='flex'>
           {
             data.length > 0 ? (
             data.map((projeto, index) => (
-              <div key={index} className={styles.projeto}>
+              <div key={index} className='projeto'>
                 <h2>{projeto.titulo}</h2>
-                <p>Orçamento: R${projeto.preco}</p>
+                <p>Orçamento: R${projeto.orcamento}</p>
                 <p><span className={styles.circulo}></span>{projeto.categoria}</p>
                 <div className={styles.botoes}>
                   <a href={urlEditar}><Button text = 'Editar'/></a>

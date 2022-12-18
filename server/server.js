@@ -9,14 +9,40 @@ res.json([
   {
     'id' : '1',
     'titulo' : 'projeto 1',
-    'preco' : '30000',
-    'categoria' : 'Desenvolvimento'
+    'orcamento' : '30000',
+    'orcamentoUtil' : '0',
+    'categoria' : 'Desenvolvimento',
+    'servico' : [
+      {
+        'nome' : 'logo',
+        'custo' : '30',
+        'descricao' : 'foda'
+      },
+      {
+        'nome' : 'site',
+        'custo' : '5',
+        'descricao' : 'pprooa'
+      }
+    ]
   },
   {
     'id' : '2',
     'titulo' : 'projeto 2',
-    'preco' : '250000',
-    'categoria' : 'Desing'
+    'orcamento' : '250000',
+    'orcamentoUtil' : '0',
+    'categoria' : 'Desing',
+    'servico' : [
+      {
+        'nome' : 'logo',
+        'custo' : '30',
+        'descricao' : 'foda'
+      },
+      {
+        'nome' : 'site',
+        'custo' : '5',
+        'descricao' : 'pprooa'
+      }
+    ]
   }
 ])
 })

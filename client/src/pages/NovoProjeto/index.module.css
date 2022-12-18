@@ -1,0 +1,19 @@
+.App {
+  width: 30%;
+  margin: 20px auto;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.input {
+  width: 370px;
+  padding: 5px;
+  margin: 15px 0;
+}
+
+.select {
+  width: 384px;
+  padding: 5px;
+  margin: 15px 0;
+}

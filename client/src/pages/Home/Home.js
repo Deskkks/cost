@@ -5,7 +5,7 @@ import Button from '../../components/Button/index'
 function Home() {
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <h1>
         Bem-vindo ao <span className={styles.marca}>Costs</span>
       </h1>
