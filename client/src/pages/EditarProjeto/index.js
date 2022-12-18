@@ -1,35 +1,18 @@
 import { useEffect, useState } from 'react';
 import Button from '../../components/Button'
+import AdicionarServico from '../../components/AdicionarServico'
 import api from '../../config/api'
 
 function EditarProjeto() {
 
   const [data, setData] = useState([{}])
+  const [serv, setServ] = useState(false)
 
   useEffect(() => {
     api.get('api').then(res => {
       setData(res.data)
     })
   })
-
-  function AdicionarServico() {
-    return (
-      <form>
-        <label htmlFor="nome">
-            <span>Nome do serviço:</span>
-            <input type='text' id='nome' name='nome' autoComplete='off'></input>
-          </label>    
-          <label htmlFor="custo">
-            <span>Custo do serviço:</span>
-            <input type='number' id='custo' name='custo'></input>
-          </label>
-          <label htmlFor="descricao">
-            <span>Descrição do serviço:</span>
-            <input type='text' id="descricao" name="descricao"></input>
-          </label>
-      </form>
-    )
-  }
 
   var projeto = data[0]
   var urlExcluir = '/excluirServ'
@@ -46,11 +29,24 @@ function EditarProjeto() {
         <p>Total utilizado: R${projeto.orcamentoUtil}</p>
       </div>
       <hr/>
-      <div className='flexSpaceB'>
-        <h1>Adicione um serviço</h1>
-        <Button text='Adicionar serviço' onclick={AdicionarServico()}/>
+      <div>
+        {
+          serv === true ? (
+            <div>
+              <div className='flexSpaceB'>
+                <h1>Adicione um serviço</h1>
+                <a onClick={() => setServ(false)}><Button text='Fechar'/></a>
+              </div>
+              <AdicionarServico/>
+            </div>
+          ) : (
+            <div className='flexSpaceB'>
+              <h1>Adicione um serviço</h1>
+                <a onClick={() => setServ(true)}><Button text='Adicionar serviço'/></a>
+            </div>
+          )
+        }
       </div>
-      
       <hr/>
       <div>
         <h1>serviços:</h1>
