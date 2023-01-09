@@ -1,28 +1,26 @@
 import { useEffect, useState } from 'react';
 import Button from '../../components/Button'
-import AdicionarServico from '../../components/AdicionarServico'
 import api from '../../config/api'
+import Servicos from '../layouts/servicos';
+import AdicionarServico from '../layouts/AdicionarServico'
 
 function EditarProjeto() {
 
-  const [data, setData] = useState([{}])
+  const [projeto, setprojeto] = useState([{}])
   const [serv, setServ] = useState(false)
 
-  useEffect(() => {
-    api.get('api').then(res => {
-      setData(res.data)
-    })
-  })
+  var idProjeto = 0
 
-  var projeto = data[0]
-  var urlExcluir = '/excluirServ'
+  useEffect(() => {
+    api.get(`projects/${idProjeto}`).then(res => setprojeto(res.data))
+  },[])
 
   return (
     <div className='App'>
       <div>
         <div className='flexSpaceB'>
           <h1>Projeto: {projeto.titulo}</h1>
-          <a href=''><Button text='Editar projeto'/></a>
+          <span><Button text='Editar projeto'/></span>
         </div>
         <p>Categoria: {projeto.categoria}</p>
         <p>Total de orçamento: R${projeto.orcamento}</p>
@@ -37,7 +35,7 @@ function EditarProjeto() {
                 <h1>Adicione um serviço</h1>
                 <a onClick={() => setServ(false)}><Button text='Fechar'/></a>
               </div>
-              <AdicionarServico/>
+              <AdicionarServico foreing_key={idProjeto}/>
             </div>
           ) : (
             <div className='flexSpaceB'>
@@ -48,25 +46,7 @@ function EditarProjeto() {
         }
       </div>
       <hr/>
-      <div>
-        <h1>serviços:</h1>
-        <div className='flex'>
-          {
-            projeto.servico.length > 0 ? (
-              projeto.servico.map((servico, index) => (
-                <div key={index} className='projeto'>
-                  <h2>{servico.nome}</h2>
-                  <p>custo: R${servico.custo}</p>
-                  <p>{servico.descricao}</p>
-                  <a href={urlExcluir}><Button text = 'Excluir'/></a>
-                </div>
-              ))
-            ) : (
-              <p>Não tem serviços</p>
-            )
-          }
-        </div>
-      </div>
+      <Servicos idProjeto={idProjeto}/>
     </div>
   )
 }

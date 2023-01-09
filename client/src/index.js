@@ -8,8 +8,8 @@ import Projetos from './pages/Projetos'
 import NovoProjeto from './pages/NovoProjeto'
 import EditarProjeto from './pages/EditarProjeto'
 import reportWebVitals from './reportWebVitals';
-import Header from './components/header';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Header from './pages/layouts/header';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +34,13 @@ const router = createBrowserRouter([
     element: <NovoProjeto />
   },
   {
-    path: '/editar',
-    element: <EditarProjeto />
+    path: '/editar/',
+    children: [
+      {
+        path:'0',
+        element: <EditarProjeto />
+      }
+    ]
   }
 ]);
 

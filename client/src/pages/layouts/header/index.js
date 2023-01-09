@@ -1,4 +1,4 @@
-import Button from '../Button/index'
+import Button from '../../../components/Button/index'
 import styles from './Header.module.css'
 
 function Header () {

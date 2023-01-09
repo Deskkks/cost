@@ -1,20 +1,17 @@
 import styles from './index.module.css'
-import { useEffect, useState } from 'react';
 import api from '../../config/api'
 import Button from '../../components/Button'
+import { useEffect, useState } from 'react';
 
 function Projetos () {
 
   const [data, setData] = useState([{}])
 
   useEffect(() => {
-    api.get('api').then(res => {
+    api.get('projects').then(res => {
       setData(res.data)
     })
   })
-
-  const urlEditar = '/editar'
-  const urlExcluir = '/excluir'
 
   return (
     <div className="App">
@@ -31,8 +28,8 @@ function Projetos () {
                 <p>Orçamento: R${projeto.orcamento}</p>
                 <p><span className={styles.circulo}></span>{projeto.categoria}</p>
                 <div className={styles.botoes}>
-                  <a href={urlEditar}><Button text = 'Editar'/></a>
-                  <a href={urlExcluir}><Button text = 'Excluir'/></a>
+                  <a href={'/editar/' + projeto.id}><Button text = 'Editar'/></a>
+                  <span onClick={() => {api.delete('projects/' + index)}}><Button text = 'Excluir'/></span>
                 </div>
               </div>
             ))
