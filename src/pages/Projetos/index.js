@@ -13,12 +13,12 @@ function Projetos () {
     })
   })
 
-  function deletarProjeto(index) {
-    api.delete('projects/' + index)
+  function deletarProjeto(id) {
+    api.delete('projects/' + id)
     .then(() => {
       console.log('apagou');
     })
-    api.get('servicos?foreing_key=' + index)
+    api.get('servicos?foreing_key=' + id)
     .then(res => {
       var servico = res.data
       if (servico.length > 0) {
@@ -47,7 +47,7 @@ function Projetos () {
                 <p><span className={styles.circulo}></span>{projeto.categoria}</p>
                 <div className={styles.botoes}>
                   <a href={'/editar/' + projeto.id}><Button text = 'Editar'/></a>
-                  <span onClick={()=>deletarProjeto(index)}><Button text = 'Excluir'/></span>
+                  <span onClick={()=>deletarProjeto(projeto.id)}><Button text = 'Excluir'/></span>
                 </div>
               </div>
             ))

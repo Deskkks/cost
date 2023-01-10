@@ -10,7 +10,10 @@ function NovoProjeto () {
   useEffect(() => {
     api.get('projects').then(res => setData(res.data))
   },[])
-  var novoID = String(Number(data.at(-1).id)+1)
+  console.log(data.id);
+  if(data.id){
+    var novoID = String(Number(data.at(-1).id)+1)
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -18,7 +21,7 @@ function NovoProjeto () {
       id: novoID,
       titulo: titulo,
       orcamento: orcamento,
-      orcamentoUtil: '0',
+      utilizado: 0,
       categoria: categoria
     })
     window.location.href = 'http://localhost:3000/projetos'

@@ -12,11 +12,14 @@ function AdicionarServico({foreing_key}) {
       setData(res.data)
     })
   },[])
-
-  var novoID = String(Number(data.at(-1).id)+1)
+  
+  if(data.id) {
+    var novoID = String(Number(data.at(-1).id)+1)
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
+    setOrcamentoUtil()
     api.post('servicos',{
       id: novoID,
       foreing_key: foreing_key,
@@ -27,11 +30,25 @@ function AdicionarServico({foreing_key}) {
     window.location.reload()
   }
 
-
+  function setOrcamentoUtil() {
+    api.get(`projects/${foreing_key}`)
+    .then(res => {
+      var orcamento = res.data.utilizado
+      var utilizado = orcamento + Number(custo)
+      
+      api.patch(`projects/${foreing_key}`,{
+        utilizado: utilizado
+      })
+      .then(() => console.log('ferw'))
+      .catch(err => console.log(err.response.data))
+    })
+    .catch(err => console.log(err.response.data))
+  }
 
   const [nome, setNome]= useState()
   const [custo, setCusto]= useState()
   const [descricao, setDescricao]= useState()
+  const [utilizado, setUtilizado]= useState()
 
   return (
     <form onSubmit={handleSubmit}>

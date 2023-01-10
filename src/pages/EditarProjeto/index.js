@@ -20,13 +20,10 @@ function EditarProjeto() {
   return (
     <div className='App'>
       <div>
-        <div className='flexSpaceB'>
-          <h1>Projeto: {projeto.titulo}</h1>
-          <span><Button text='Editar projeto'/></span>
-        </div>
+        <h1>Projeto: {projeto.titulo}</h1>
         <p>Categoria: {projeto.categoria}</p>
         <p>Total de orçamento: R${projeto.orcamento}</p>
-        <p>Total utilizado: R${projeto.orcamentoUtil}</p>
+        <p>Total utilizado: R${projeto.utilizado}</p>
       </div>
       <hr/>
       <div>

@@ -1,5 +1,6 @@
 import styles from './index.module.css';
 import Button from '../../components/Button'
+import pig from './pig.png'
 
 function Home() {
 
@@ -15,7 +16,7 @@ function Home() {
         <Button text='Criar projeto' />
       </a>
       <br/>
-      <img src='../pig.png' alt='Cofre de porco' className={styles.img} />
+      <img src={pig} alt='Cofre de porco' className={styles.img} />
     </div>
   );
 }

@@ -1,12 +1,13 @@
 import Button from '../../../components/Button/index'
 import styles from './Header.module.css'
+import moeda from './moeda.png'
 
 function Header () {
   return (
   <header>
     <div className={styles.header}>
         <div>
-          <img src="./moeda.png" alt="Logo" className={styles.img} />
+          <img src={moeda} alt="Logo" className={styles.img} />
         </div>
         <div>
           <a href='/'>

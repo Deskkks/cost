@@ -1,48 +1,41 @@
 {
   "projects": [
     {
-      "id": "0",
-      "titulo": "projeto 1",
-      "orcamento": "30000",
-      "orcamentoUtil": "0",
-      "categoria": "Desenvolvimento"
-    },
-    {
-      "id": "1",
-      "titulo": "projeto 1",
-      "orcamento": "30000",
-      "orcamentoUtil": "0",
-      "categoria": "Desenvolvimento"
+      "titulo": "Costs",
+      "orcamento": "5000",
+      "utilizado": 2103,
+      "categoria": "planejamento",
+      "id": 1
     }
   ],
   "servicos": [
     {
-      "id": "0",
-      "foreing_key": "0",
-      "nome": "logo",
-      "custo": "30",
-      "descricao": "foda"
-    },
-    {
-      "id": "1",
-      "foreing_key": "0",
-      "nome": "site",
-      "custo": "5",
-      "descricao": "pprooa"
-    },
-    {
-      "id": "3",
       "foreing_key": "1",
-      "nome": "back",
-      "custo": "5",
-      "descricao": "pprooa"
+      "nome": "front",
+      "custo": "1300",
+      "descricao": "contratar um freelancer para fazer o front-end da pagina",
+      "id": 1
     },
     {
-      "id": "4",
       "foreing_key": "1",
-      "nome": "Front",
-      "custo": "5000",
-      "descricao": "um cara ai"
+      "nome": "123",
+      "custo": "213",
+      "descricao": "312",
+      "id": 2
+    },
+    {
+      "foreing_key": "1",
+      "nome": "gergw",
+      "custo": "321",
+      "descricao": "43",
+      "id": 3
+    },
+    {
+      "foreing_key": "1",
+      "nome": "few",
+      "custo": "432",
+      "descricao": "fwe",
+      "id": 4
     }
   ]
 }
