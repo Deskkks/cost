@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
 import Button from '../../components/Button'
 import api from '../../config/api'
 import Servicos from '../layouts/servicos';
@@ -9,7 +11,7 @@ function EditarProjeto() {
   const [projeto, setprojeto] = useState([{}])
   const [serv, setServ] = useState(false)
 
-  var idProjeto = 0
+  var {idProjeto} = useParams()
 
   useEffect(() => {
     api.get(`projects/${idProjeto}`).then(res => setprojeto(res.data))

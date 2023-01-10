@@ -13,6 +13,24 @@ function Projetos () {
     })
   })
 
+  function deletarProjeto(index) {
+    api.delete('projects/' + index)
+    .then(() => {
+      console.log('apagou');
+    })
+    api.get('servicos?foreing_key=' + index)
+    .then(res => {
+      var servico = res.data
+      if (servico.length > 0) {
+        servico.map((servico) => {
+        api.delete(`servicos/${servico.id}`)
+        .then(() => console.log('apagou serviço'))
+        })
+      }
+    })
+    .catch(err => console.log(err.response.data))
+  }
+
   return (
     <div className="App">
       <div className='flexSpaceB'>
@@ -29,7 +47,7 @@ function Projetos () {
                 <p><span className={styles.circulo}></span>{projeto.categoria}</p>
                 <div className={styles.botoes}>
                   <a href={'/editar/' + projeto.id}><Button text = 'Editar'/></a>
-                  <span onClick={() => {api.delete('projects/' + index)}}><Button text = 'Excluir'/></span>
+                  <span onClick={()=>deletarProjeto(index)}><Button text = 'Excluir'/></span>
                 </div>
               </div>
             ))

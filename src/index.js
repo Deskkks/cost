@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
 import Empresa from './pages/Empresa'
 import Contato from './pages/Contato'
 import Projetos from './pages/Projetos'
@@ -34,13 +34,8 @@ const router = createBrowserRouter([
     element: <NovoProjeto />
   },
   {
-    path: '/editar/',
-    children: [
-      {
-        path:'0',
-        element: <EditarProjeto />
-      }
-    ]
+    path: '/editar/:idProjeto',
+    element: <EditarProjeto />
   }
 ]);
 
