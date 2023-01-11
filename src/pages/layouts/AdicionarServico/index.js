@@ -11,7 +11,8 @@ function AdicionarServico({foreing_key}) {
     api.get(`servicos`).then(res => {
       setData(res.data)
     })
-  },[])
+    api.get('projects')
+  },[data])
   
   if(data.id) {
     var novoID = String(Number(data.at(-1).id)+1)
@@ -27,7 +28,6 @@ function AdicionarServico({foreing_key}) {
       custo: custo,
       descricao: descricao,
     })
-    window.location.reload()
   }
 
   function setOrcamentoUtil() {
@@ -39,16 +39,12 @@ function AdicionarServico({foreing_key}) {
       api.patch(`projects/${foreing_key}`,{
         utilizado: utilizado
       })
-      .then(() => console.log('ferw'))
-      .catch(err => console.log(err.response.data))
     })
-    .catch(err => console.log(err.response.data))
   }
 
   const [nome, setNome]= useState()
   const [custo, setCusto]= useState()
   const [descricao, setDescricao]= useState()
-  const [utilizado, setUtilizado]= useState()
 
   return (
     <form onSubmit={handleSubmit}>

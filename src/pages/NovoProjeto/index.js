@@ -10,7 +10,6 @@ function NovoProjeto () {
   useEffect(() => {
     api.get('projects').then(res => setData(res.data))
   },[])
-  console.log(data.id);
   if(data.id){
     var novoID = String(Number(data.at(-1).id)+1)
   }
@@ -70,7 +69,7 @@ function NovoProjeto () {
             className={styles.select}
             onChange={(e) => setCategoria(e.target.value)}
             >
-              <option selected disabled='on'></option>
+              <option disabled selected></option>
               <option value="planejamento">Planejamento</option>
               <option value="desing">Desing</option>
               <option value="desenvolvimento">Desenvolvimento</option>

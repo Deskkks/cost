@@ -1,41 +1,4 @@
 {
-  "projects": [
-    {
-      "titulo": "Costs",
-      "orcamento": "5000",
-      "utilizado": 2103,
-      "categoria": "planejamento",
-      "id": 1
-    }
-  ],
-  "servicos": [
-    {
-      "foreing_key": "1",
-      "nome": "front",
-      "custo": "1300",
-      "descricao": "contratar um freelancer para fazer o front-end da pagina",
-      "id": 1
-    },
-    {
-      "foreing_key": "1",
-      "nome": "123",
-      "custo": "213",
-      "descricao": "312",
-      "id": 2
-    },
-    {
-      "foreing_key": "1",
-      "nome": "gergw",
-      "custo": "321",
-      "descricao": "43",
-      "id": 3
-    },
-    {
-      "foreing_key": "1",
-      "nome": "few",
-      "custo": "432",
-      "descricao": "fwe",
-      "id": 4
-    }
-  ]
+  "projects": [],
+  "servicos": []
 }

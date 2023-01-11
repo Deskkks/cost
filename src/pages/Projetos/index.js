@@ -11,7 +11,7 @@ function Projetos () {
     api.get('projects').then(res => {
       setData(res.data)
     })
-  })
+  },[data])
 
   function deletarProjeto(id) {
     api.delete('projects/' + id)

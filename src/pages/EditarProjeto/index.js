@@ -15,7 +15,7 @@ function EditarProjeto() {
 
   useEffect(() => {
     api.get(`projects/${idProjeto}`).then(res => setprojeto(res.data))
-  },[])
+  },[projeto])
 
   return (
     <div className='App'>
